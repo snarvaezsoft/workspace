@@ -54,6 +54,12 @@ Makefile
 \.\#*
 
 
+
 #   Generated intermediate files
 *.o
 *.Po
+
+
+#  Generated Executables
+/src/hello
+/src/insertinarray

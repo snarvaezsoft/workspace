@@ -1,0 +1,6 @@
+
+
+
+
+# adds source directory for libc
+set directories /home/seba/c_workspace/c/coreutils201511/glibc-2.19/locale:/home/seba/c_workspace/c/coreutils201511/glibc-2.19/sysdeps/:/home/seba/c_workspace/c/coreutils201511/glibc-2.19/string:/home/seba/c_workspace/c/coreutils201511/glibc-2.19/stdlib:/home/seba/c_workspace/c/coreutils201511/glibc-2.19/malloc

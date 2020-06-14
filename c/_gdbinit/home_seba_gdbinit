@@ -1,0 +1,8 @@
+
+
+
+set verbose on
+
+# disable autoload security protection
+# allows to put .gdbinit files inside any source's project directory
+set auto-load safe-path /
