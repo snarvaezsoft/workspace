@@ -1,0 +1,173 @@
+#+TITLE: Worklog
+
+emacs:
+-  font: monospace 14
+-  theme: clarity
+
+GDB file:gdb.txt
+
+(info "gdb")
+
+
+package: libglib2.0-doc
+file:/usr/share/doc/libglib2.0-doc/glib/
+
+#+BEGIN_SRC lisp
+(w3m "/usr/share/doc/libglib2.0-doc/glib/index.html")
+#+END_SRC
+
+#+BEGIN_SRC bash
+~/root/usr/src
+
+apt-get source libglib2.0-0
+
+Reading package lists... Done
+Picking 'glib2.0' as source package instead of 'libglib2.0-0'
+NOTICE: 'glib2.0' packaging is maintained in the 'Git' version control system at:
+https://salsa.debian.org/gnome-team/glib.git -b debian/buster
+Please use:
+git clone https://salsa.debian.org/gnome-team/glib.git -b debian/buster
+to retrieve the latest (possibly unreleased) updates to the package.
+#+END_SRC
+
+
+#+BEGIN_SRC bash
+
+./autogen.sh
+
+./configure --enable-debug=yes \
+  CXXFLAGS='-g3 -Wall -O0 '  \
+  CFLAGS='-g3 -Wall -O0 '
+
+
+# by default, it will install the library at /usr/local/lib
+sudo make install
+
+
+
+seba@d10tr:~/root/usr/src/build_gtk3_debug/examples/.libs$ ldd hello-world
+	linux-vdso.so.1 (0x00007ffe343bc000)
+	libgtk-3.so.0 => /usr/local/lib/libgtk-3.so.0 (0x00007f4c3e654000)
+	libgdk-3.so.0 => /usr/local/lib/libgdk-3.so.0 (0x00007f4c3e531000)
+	libgmodule-2.0.so.0 => /usr/local/lib/libgmodule-2.0.so.0 (0x00007f4c3e52b000)
+	libgio-2.0.so.0 => /usr/local/lib/libgio-2.0.so.0 (0x00007f4c3d434000)
+	libgobject-2.0.so.0 => /usr/local/lib/libgobject-2.0.so.0 (0x00007f4c3d0f9000)
+	libglib-2.0.so.0 => /usr/local/lib/libglib-2.0.so.0 (0x00007f4c3cfbe000)
+
+
+
+cd ~/root/usr/src/
+apt-get source coreutils
+
+file:~/root/usr/src/coreutils-8.30/
+
+./configure  CXXFLAGS='-g3 -Wall -O0 '  \
+  CFLAGS='-g3 -Wall -O0 '   \
+   --prefix=$HOME/root
+
+make
+make install
+
+
+
+
+seba@d10tr:~/root/usr/src/glibc-2.28/locale/setlocale.c
+
+==================================================
+
+glibc-doc - GNU C Library: Documentation
+glibc-source - GNU C Library: sources
+libc6-pic - GNU C Library: PIC archive library
+glibc-doc-reference - GNU C Library: Documentation
+
+libc6 - GNU C Library: Shared libraries
+libc6-dbg - GNU C Library: detached debugging symbols
+libc6-dev - GNU C Library: Development Libraries and Header Files
+
+# get GNU C Library source code for debugging/breakpoints
+cd ~/root/usr/src
+apt-get source libc6
+
+#+END_SRC
+
+
+To build a package from source, first install the build dependencies:
+
+#+BEGIN_SRC bash
+sudo apt-get build-dep <package>
+
+
+cat my_ip.sh
+#!/bin/bash
+# prints my public IP address
+
+dig +short myip.opendns.com @resolver1.opendns.com
+
+#+END_SRC
+
+* Projects
+
+** Book Extreme C -
+https://subscription.packtpub.com/book/programming/9781789343625/1
+
+file:~/c_workspace/c/extreme_c/
+file:~/c_workspace/c/extreme_c/extreme_c_book_notes.txt
+file:~/c_workspace/c/extreme_c/src/
+
+** video Python Fundamentals - Deitel   45hs
+https://learning.oreilly.com/videos/python-fundamentals/9780135917411
+file:~/c_workspace/python/video_python_fundamentals_deitel/
+
+Python For Programmers
+https://learning.oreilly.com/library/view/python-for-programmers/9780135231364/
+
+
+** Book Modern C (Dec 2019)
+
+https://learning.oreilly.com/library/view/modern-c/9781617295812/kindle_split_005.html
+
+Project Folder: file:~/c_workspace/c/manning_modern_c_book
+
+
+** introducing_python_2nd_ed.notes.txt
+
+Project Folder: file:~/c_workspace/python/introducing_python_2nd_ed
+
+file:~/c_workspace/python/introducing_python_2nd_ed.notes.txt
+
+
+* Appendix: installed packages
+
+-  build-essentials
+-  automake
+-  pkg-config
+
+-  libglib2.0-dev
+
+* d10tr notes
+
+d10tr.notes
+
+gnome 3 development
+
+file:~/c_workspace/
+
+~/c_workspace/rclone_backup.sh
+
+* bookmarks
+
+file:~/c_workspace/gtk3/gtk3.txt
+
+file:~/c_workspace/gtk3/gobject-examples
+file:~/c_workspace/c/understanding.and.using.c.pointers/code/src/
+
+file:~/c_workspace/coreutils/coreutils.notes.txt
+file:~/c_workspace/training_coreutils/src/
+
+file:~/c_workspace/c/The.ANSI.C.Programming.Language.2nd.ed.by.K_R.txt
+
+file:~/c_workspace/sen-blog/public_html/c/source/acpg
+
+file:/home/seba/c_workspace/sen-blog/public_html/c/source/acpg/ch8/src/
+
+file:/home/seba/c_workspace/sen-blog/public_html/c/source/acpg/ch8/src/Makefile.am
